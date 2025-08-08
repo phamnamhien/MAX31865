@@ -1,5 +1,3 @@
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a Coffee', '#72a4f2', 'Q5Q1JW4XS');kofiwidget2.draw();</script> 
-
 # MAX31865 Generic Library
 
 A platform-independent C library for MAX31865 RTD-to-Digital Converter supporting PT100/PT1000 sensors with 2-wire, 3-wire, and 4-wire configurations.
