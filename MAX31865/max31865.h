@@ -102,8 +102,8 @@ typedef struct {
     max31865_status_t (*spi_write_read)(struct MAX31865_Handle *hmax, uint8_t *tx_data, uint8_t *rx_data, uint16_t size);
 
     /* GPIO Control Functions */
-    void (*cs_low)(struct MAX31865_Handle *hmax);
-    void (*cs_high)(struct MAX31865_Handle *hmax);
+    void (*cs_low)(void);
+    void (*cs_high)(void);
 
     /* Delay Function */
     void (*delay_ms)(uint32_t ms);
@@ -139,7 +139,6 @@ typedef struct MAX31865_Handle {
 /* Initialization and Configuration */
 max31865_status_t MAX31865_Init(MAX31865_Handle_t *hmax,
                                 const max31865_platform_t *platform,
-                                void *cs_port, uint32_t cs_pin,
                                 max31865_numwires_t wires,
                                 float rref, float rnominal);
 

@@ -25,7 +25,6 @@ static max31865_status_t MAX31865_WaitForConversion(MAX31865_Handle_t *hmax) {
  */
 max31865_status_t MAX31865_Init(MAX31865_Handle_t *hmax,
                                 const max31865_platform_t *platform,
-                                void *cs_port, uint32_t cs_pin,
                                 max31865_numwires_t wires,
                                 float rref, float rnominal) {
 
@@ -37,8 +36,6 @@ max31865_status_t MAX31865_Init(MAX31865_Handle_t *hmax,
     hmax->platform = *platform;
 
     /* Initialize structure */
-    hmax->cs_port = cs_port;
-    hmax->cs_pin = cs_pin;
     hmax->rref = rref;
     hmax->rnominal = rnominal;
     hmax->wires = wires;
@@ -50,7 +47,7 @@ max31865_status_t MAX31865_Init(MAX31865_Handle_t *hmax,
 
     /* Set CS high initially */
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+        hmax->platform.cs_high();
     }
 
     if (hmax->platform.delay_ms) {
@@ -126,7 +123,7 @@ max31865_status_t MAX31865_ReadRegister8(MAX31865_Handle_t *hmax, uint8_t reg, u
     max31865_status_t status;
 
     if (hmax->platform.cs_low) {
-        hmax->platform.cs_low(hmax);
+    	hmax->platform.cs_low();
     }
 
     if (hmax->platform.delay_ms) {
@@ -141,7 +138,7 @@ max31865_status_t MAX31865_ReadRegister8(MAX31865_Handle_t *hmax, uint8_t reg, u
     }
 
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+    	hmax->platform.cs_high();
     }
 
     if (status != MAX31865_OK) {
@@ -165,7 +162,7 @@ max31865_status_t MAX31865_ReadRegister16(MAX31865_Handle_t *hmax, uint8_t reg, 
     max31865_status_t status;
 
     if (hmax->platform.cs_low) {
-        hmax->platform.cs_low(hmax);
+    	hmax->platform.cs_low();
     }
 
     if (hmax->platform.delay_ms) {
@@ -180,7 +177,7 @@ max31865_status_t MAX31865_ReadRegister16(MAX31865_Handle_t *hmax, uint8_t reg, 
     }
 
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+        hmax->platform.cs_high();
     }
 
     if (status != MAX31865_OK) {
@@ -207,7 +204,7 @@ max31865_status_t MAX31865_WriteRegister8(MAX31865_Handle_t *hmax, uint8_t reg, 
     tx_data[1] = data;
 
     if (hmax->platform.cs_low) {
-        hmax->platform.cs_low(hmax);
+        hmax->platform.cs_low();
     }
 
     if (hmax->platform.delay_ms) {
@@ -221,7 +218,7 @@ max31865_status_t MAX31865_WriteRegister8(MAX31865_Handle_t *hmax, uint8_t reg, 
     }
 
     if (hmax->platform.cs_high) {
-        hmax->platform.cs_high(hmax);
+        hmax->platform.cs_high();
     }
 
     return status;

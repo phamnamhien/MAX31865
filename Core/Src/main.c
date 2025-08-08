@@ -56,8 +56,8 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 /* Platform Integration Functions for MAX31865 */
 max31865_status_t stm32_spi_write_read(MAX31865_Handle_t *hmax, uint8_t *tx_data, uint8_t *rx_data, uint16_t size);
-void stm32_cs_low(MAX31865_Handle_t *hmax);
-void stm32_cs_high(MAX31865_Handle_t *hmax);
+void stm32_cs_low(void);
+void stm32_cs_high(void);
 void stm32_delay_ms(uint32_t ms);
 
 /* Application Functions */
@@ -93,15 +93,15 @@ max31865_status_t stm32_spi_write_read(MAX31865_Handle_t *hmax, uint8_t *tx_data
 /**
  * @brief Set CS pin low
  */
-void stm32_cs_low(MAX31865_Handle_t *hmax) {
-    HAL_GPIO_WritePin((GPIO_TypeDef*)hmax->cs_port, hmax->cs_pin, GPIO_PIN_RESET);
+void stm32_cs_low(void) {
+    HAL_GPIO_WritePin(MAX31865_CS_GPIO_Port, MAX31865_CS_Pin, GPIO_PIN_RESET);
 }
 
 /**
  * @brief Set CS pin high
  */
-void stm32_cs_high(MAX31865_Handle_t *hmax) {
-    HAL_GPIO_WritePin((GPIO_TypeDef*)hmax->cs_port, hmax->cs_pin, GPIO_PIN_SET);
+void stm32_cs_high(void) {
+    HAL_GPIO_WritePin(MAX31865_CS_GPIO_Port, MAX31865_CS_Pin, GPIO_PIN_SET);
 }
 
 /**
@@ -140,8 +140,11 @@ void MAX31865_Test(void) {
     };
 
     /* Initialize MAX31865 */
-    status = MAX31865_Init(&hmax31865, &platform, GPIOA, GPIO_PIN_4,
-                          MAX31865_3WIRE, RREF_VALUE, RNOMINAL_VALUE);
+    status = MAX31865_Init(&hmax31865,
+    					&platform,
+                       	MAX31865_3WIRE,
+						RREF_VALUE,
+						RNOMINAL_VALUE);
 
     if (status != MAX31865_OK) {
         printf("ERROR: MAX31865 initialization failed! Status: %d\r\n", status);
