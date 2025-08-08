@@ -1,9 +1,0 @@
-../Core/Src/main.c:73:19:stm32_spi_write_read	5
-../Core/Src/main.c:96:6:stm32_cs_low	1
-../Core/Src/main.c:103:6:stm32_cs_high	1
-../Core/Src/main.c:110:6:stm32_delay_ms	1
-../Core/Src/main.c:117:5:_write	1
-../Core/Src/main.c:125:6:MAX31865_Test	9
-../Core/Src/main.c:221:5:main	2
-../Core/Src/main.c:284:6:SystemClock_Config	3
-../Core/Src/main.c:327:6:Error_Handler	1
