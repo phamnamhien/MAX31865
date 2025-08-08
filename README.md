@@ -42,7 +42,7 @@ void platform_delay_ms(uint32_t ms) {
 ### 2. Initialize Library
 
 ```c
-#include "max31865_generic.h"
+#include "max31865.h"
 
 MAX31865_Handle_t rtd_sensor;
 
@@ -225,8 +225,8 @@ for (int i = 0; i < 4; i++) {
 
 ## Files
 
-- `max31865_generic.h` - Library header
-- `max31865_generic.c` - Library implementation
+- `max31865.h` - Library header
+- `max31865.c` - Library implementation
 - `main.c` - STM32 example
 - `main.h` - STM32 configuration
 
