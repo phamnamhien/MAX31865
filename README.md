@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q1JW4XS)
+
 # MAX31865 Generic Library
 
 A platform-independent C library for MAX31865 RTD-to-Digital Converter supporting PT100/PT1000 sensors with 2-wire, 3-wire, and 4-wire configurations.
