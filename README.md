@@ -231,11 +231,7 @@ for (int i = 0; i < 4; i++) {
 - `main.h` - STM32 configuration
 
 ## Tested Platforms
-
 - ✅ STM32F103C8T6 (Blue Pill)
-- ✅ STM32F401CCU6 (Black Pill)
-- ✅ Arduino Uno/Nano
-- ✅ ESP32
 
 ## License
 
