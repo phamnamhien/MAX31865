@@ -56,8 +56,8 @@ max31865_platform_t platform = {
 };
 
 // Initialize sensor (PT100, 3-wire, RREF=430Ω)
-MAX31865_Init(&rtd_sensor, &platform, cs_port, cs_pin,
-              MAX31865_3WIRE, 430.0f, 100.0f);
+MAX31865_Init(&rtd_sensor, &platform,
+                    MAX31865_3WIRE, 430.0f, 100.0f);
 ```
 
 ### 3. Read Temperature
