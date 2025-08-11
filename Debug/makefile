@@ -64,8 +64,8 @@ all: main-build
 main-build: MAX31865.elf secondary-outputs
 
 # Tool invocations
-MAX31865.elf MAX31865.map: $(OBJS) $(USER_OBJS) D:\Documents\GitHub\MAX31865\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "MAX31865.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Documents\GitHub\MAX31865\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX31865.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+MAX31865.elf MAX31865.map: $(OBJS) $(USER_OBJS) D:\Documents\GitHub\phamnamhien\MAX31865\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "MAX31865.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Documents\GitHub\phamnamhien\MAX31865\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX31865.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
