@@ -117,10 +117,6 @@ typedef struct MAX31865_Handle {
     /* Platform Interface */
     max31865_platform_t platform;
 
-    /* Hardware Configuration - Platform specific identifiers */
-    void *cs_port;      // Can be GPIO port, pin number, or any platform-specific identifier
-    uint32_t cs_pin;    // Pin identifier
-
     /* RTD Configuration */
     float rref;                 // Reference resistor value (Ohms)
     float rnominal;            // Nominal RTD resistance at 0°C (Ohms)
