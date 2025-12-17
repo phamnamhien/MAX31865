@@ -1,3 +1,7 @@
+## 💖 Support This Project
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q1JW4XS)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/phamnamhien)
+
 # MAX31865 Generic Library
 
 A platform-independent C library for MAX31865 RTD-to-Digital Converter supporting PT100/PT1000 sensors with 2-wire, 3-wire, and 4-wire configurations.
@@ -241,7 +245,5 @@ MIT License - Free for commercial and personal use.
 
 For bugs and feature requests, please create an issue on GitHub.
 
-## 💖 Support This Project
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q1JW4XS)
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/phamnamhien)
+
 
